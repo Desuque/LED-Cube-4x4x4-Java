@@ -6,14 +6,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
-/**
- *
- * @author Antony García Gonzáles, from Panama Hitek Creative Team
- *
- * Este ejemplo le da dfuncionalidad a un sencillo ejemplo para encender o
- * apagar un LED conectado a Arduino al presionar uno de los dos botones de la
- * interfaz gráfica.
- */
 public class Window extends javax.swing.JFrame {
 //Se instancia la Librería Arduino
 
