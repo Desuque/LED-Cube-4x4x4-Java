@@ -6,6 +6,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
+/**
+ *
+ * @author Antony García Gonzáles, from Panama Hitek Creative Team
+ *
+ * Este ejemplo le da dfuncionalidad a un sencillo ejemplo para encender o
+ * apagar un LED conectado a Arduino al presionar uno de los dos botones de la
+ * interfaz gráfica.
+ */
 public class Window extends javax.swing.JFrame {
 //Se instancia la Librería Arduino
 
@@ -47,9 +55,10 @@ public class Window extends javax.swing.JFrame {
         jButtonRefresh = new javax.swing.JButton();
         jButtonConectar = new javax.swing.JButton();
         jLabelPH = new javax.swing.JLabel();
+        jLabelPH1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("ASwt v1.1.0");
+        setTitle("LEDCube 4x4x4");
         setBackground(new java.awt.Color(51, 51, 51));
         setResizable(false);
 
@@ -66,7 +75,7 @@ public class Window extends javax.swing.JFrame {
         jButtonEncender.setBackground(new java.awt.Color(204, 204, 204));
         jButtonEncender.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButtonEncender.setForeground(new java.awt.Color(255, 102, 0));
-        jButtonEncender.setText("Encender");
+        jButtonEncender.setText("Secuencia I");
         jButtonEncender.setEnabled(false);
         jButtonEncender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,7 +86,7 @@ public class Window extends javax.swing.JFrame {
         jButtonApagar.setBackground(new java.awt.Color(204, 204, 204));
         jButtonApagar.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jButtonApagar.setForeground(new java.awt.Color(255, 102, 0));
-        jButtonApagar.setText("Apagar");
+        jButtonApagar.setText("Secuencia II");
         jButtonApagar.setEnabled(false);
         jButtonApagar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,15 +145,13 @@ public class Window extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jComboBoxPorts, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jComboBoxPorts, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonRefresh, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonConectar, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jButtonConectar, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE)
-                    .addContainerGap()))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -153,17 +160,14 @@ public class Window extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButtonRefresh, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
                     .addComponent(jComboBoxPorts))
-                .addContainerGap(50, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel3Layout.createSequentialGroup()
-                    .addGap(52, 52, 52)
-                    .addComponent(jButtonConectar)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(jButtonConectar)
+                .addContainerGap())
         );
 
         jLabelPH.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabelPH.setForeground(new java.awt.Color(255, 255, 255));
-        jLabelPH.setText("by Panama Hitek");
+        jLabelPH.setText("66.02 Laboratorio | FIUBA");
         jLabelPH.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseMoved(java.awt.event.MouseEvent evt) {
                 jLabelPHMouseMoved(evt);
@@ -175,16 +179,35 @@ public class Window extends javax.swing.JFrame {
             }
         });
 
+        jLabelPH1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabelPH1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabelPH1.setText("LEDCube 4x4x4");
+        jLabelPH1.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
+            public void mouseMoved(java.awt.event.MouseEvent evt) {
+                jLabelPH1MouseMoved(evt);
+            }
+        });
+        jLabelPH1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelPH1MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelPH1)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(330, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabelPH)
@@ -194,10 +217,12 @@ public class Window extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelPH1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addComponent(jLabelPH)
                 .addContainerGap())
         );
@@ -216,33 +241,27 @@ public class Window extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonEncenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEncenderActionPerformed
+    private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
+        jLabelPH.setForeground(Color.white);
+    }//GEN-LAST:event_jPanel1MouseMoved
 
-        //Se modifica la interface gráfica del botón precionado
-        c.enableButton(jButtonApagar);
-        c.disableButton(jButtonEncender);
-        //Se envían un -1- para encender el LED
-        try {
-            Arduino.sendData("1");
-        } catch (Exception ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
+    private void jLabelPH1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPH1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelPH1MouseClicked
 
+    private void jLabelPH1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPH1MouseMoved
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabelPH1MouseMoved
 
-    }//GEN-LAST:event_jButtonEncenderActionPerformed
+    private void jLabelPHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPHMouseClicked
+        Acerca a = new Acerca();
+        a.setVisible(true);
+        a.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jLabelPHMouseClicked
 
-    private void jButtonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonApagarActionPerformed
-
-        //Se modifica la interface gráfica del botón precionado
-        c.enableButton(jButtonEncender);
-        c.disableButton(jButtonApagar);
-        //Se envía un -0- para apagar el LED
-        try {
-            Arduino.sendData("0");
-        } catch (Exception ex) {
-            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButtonApagarActionPerformed
+    private void jLabelPHMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPHMouseMoved
+        jLabelPH.setForeground(new Color(255, 204, 51));
+    }//GEN-LAST:event_jLabelPHMouseMoved
 
     private void jButtonConectarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConectarActionPerformed
 
@@ -275,22 +294,34 @@ public class Window extends javax.swing.JFrame {
 
         getPorts();
 
-
     }//GEN-LAST:event_jButtonRefreshActionPerformed
 
-    private void jLabelPHMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPHMouseMoved
-        jLabelPH.setForeground(new Color(255, 204, 51));
-    }//GEN-LAST:event_jLabelPHMouseMoved
+    private void jButtonApagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonApagarActionPerformed
 
-    private void jPanel1MouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel1MouseMoved
-        jLabelPH.setForeground(Color.white);
-    }//GEN-LAST:event_jPanel1MouseMoved
+        //Se modifica la interface gráfica del botón precionado
+        c.enableButton(jButtonEncender);
+        c.disableButton(jButtonApagar);
+        //Se envía un -0- para apagar el LED
+        try {
+            Arduino.sendData("0");
+        } catch (Exception ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButtonApagarActionPerformed
 
-    private void jLabelPHMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelPHMouseClicked
-       Acerca a = new Acerca();
-       a.setVisible(true);
-     a.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jLabelPHMouseClicked
+    private void jButtonEncenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEncenderActionPerformed
+
+        //Se modifica la interface gráfica del botón precionado
+        c.enableButton(jButtonApagar);
+        c.disableButton(jButtonEncender);
+        //Se envían un -1- para encender el LED
+        try {
+            Arduino.sendData("1");
+        } catch (Exception ex) {
+            Logger.getLogger(Window.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }//GEN-LAST:event_jButtonEncenderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -333,6 +364,7 @@ public class Window extends javax.swing.JFrame {
     private javax.swing.JButton jButtonRefresh;
     private javax.swing.JComboBox jComboBoxPorts;
     private javax.swing.JLabel jLabelPH;
+    private javax.swing.JLabel jLabelPH1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
