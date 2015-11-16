@@ -415,7 +415,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia6);
         c.enableButton(jButtonSecuencia7);
         c.enableButton(jButtonSecuencia8);
-        c.disableButton(jButtonSecuencia2);
         //Se envía un -2- para prender el LED
         try {
             Arduino.sendData("2");
@@ -434,7 +433,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia6);
         c.enableButton(jButtonSecuencia7);
         c.enableButton(jButtonSecuencia8);
-        c.disableButton(jButtonSecuencia1);
         //Se envían un -1- para encender el LED
         try {
             Arduino.sendData("1");
@@ -453,7 +451,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia6);
         c.enableButton(jButtonSecuencia7);
         c.enableButton(jButtonSecuencia8);
-        c.disableButton(jButtonSecuencia3);
         //Se envían un -3- para encender el LED
         try {
             Arduino.sendData("3");
@@ -471,7 +468,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia6);
         c.enableButton(jButtonSecuencia7);
         c.enableButton(jButtonSecuencia8);
-        c.disableButton(jButtonSecuencia4);
         //Se envían un -4- para encender el LED
         try {
             Arduino.sendData("4");
@@ -489,7 +485,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia6);
         c.enableButton(jButtonSecuencia7);
         c.enableButton(jButtonSecuencia8);
-        c.disableButton(jButtonSecuencia5);
         //Se envían un -5- para encender el LED
         try {
             Arduino.sendData("5");
@@ -507,7 +502,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia5);
         c.enableButton(jButtonSecuencia7);
         c.enableButton(jButtonSecuencia8);
-        c.disableButton(jButtonSecuencia6);
         //Se envían un -6- para encender el LED
         try {
             Arduino.sendData("6");
@@ -525,7 +519,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia5);
         c.enableButton(jButtonSecuencia6);
         c.enableButton(jButtonSecuencia8);
-        c.disableButton(jButtonSecuencia7);
         //Se envían un -7- para encender el LED
         try {
             Arduino.sendData("7");
@@ -543,7 +536,6 @@ public class Window extends javax.swing.JFrame {
         c.enableButton(jButtonSecuencia5);
         c.enableButton(jButtonSecuencia6);
         c.enableButton(jButtonSecuencia7);
-        c.disableButton(jButtonSecuencia8);
         //Se envían un -8- para encender el LED
         try {
             Arduino.sendData("8");
