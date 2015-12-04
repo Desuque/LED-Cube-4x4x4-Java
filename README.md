@@ -4,6 +4,8 @@ Codigo fuente Java para controlar los distintos patrones de luz que se mostraran
 
 66.02 Laboratorio | FIUBA
 
+![Alt text](https://github.com/Desuque/LED-Cube-4x4x4-Java/blob/master/LEDCube.png?raw=true)
+
 #Fuentes:
 
 http://www.tecnosalva.com/c%C3%B3mo-hacer-cubo-leds-4x4x4-arduino
