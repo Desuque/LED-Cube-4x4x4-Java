@@ -45,9 +45,7 @@ public class Controls {
                     java.net.URI uri = new java.net.URI(URL);
                     desktop.browse(uri);
                 } catch (URISyntaxException ex) {
-                    Logger.getLogger(Acerca.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(Acerca.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
         }

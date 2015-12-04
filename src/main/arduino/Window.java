@@ -260,16 +260,6 @@ public class Window extends javax.swing.JFrame {
         jLabelPH.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabelPH.setForeground(new java.awt.Color(255, 255, 255));
         jLabelPH.setText("66.02 Laboratorio | FIUBA");
-        jLabelPH.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jLabelPHMouseMoved(evt);
-            }
-        });
-        jLabelPH.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelPHMouseClicked(evt);
-            }
-        });
 
         jLabelPH1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabelPH1.setForeground(new java.awt.Color(255, 255, 255));
@@ -351,9 +341,7 @@ public class Window extends javax.swing.JFrame {
     }                                    
 
     private void jLabelPHMouseClicked(java.awt.event.MouseEvent evt) {                                      
-        Acerca a = new Acerca();
-        a.setVisible(true);
-        a.setLocationRelativeTo(null);
+        
     }                                     
 
     private void jLabelPHMouseMoved(java.awt.event.MouseEvent evt) {                                    
